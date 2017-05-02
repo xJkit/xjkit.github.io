@@ -5,7 +5,7 @@
 # Site
 title: Suite John 練功街
 subtitle: In my street, make your suite.
-description: 技術隨筆，關於所愛的 JavaScript：詭譎卻強大的全端語言。
+description: 小街。技術隨筆。熱愛 JavaScript－詭譎卻強大的全端語言。
 author: Jay Chung
 language: zh-tw
 timezone:
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
