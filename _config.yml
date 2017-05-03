@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://xjkit.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -46,13 +46,7 @@ highlight:
 # Category & Tag
 default_category: 隨筆
 category_map:
-- 隨筆
-- 分享
 tag_map:
-- JavaScript
-- ES6
-- React
-- Redux
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

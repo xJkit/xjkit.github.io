@@ -1,52 +1,47 @@
 ---
-title: 分享-搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
-date: 2017-05-01 17:53:10
+title: 搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
+categories:
+  - 分享
 tags:
-- javascript
-- eslint
-- debug
+  - javascript
+  - debug
+date: 2017-05-03 10:41:52
 ---
 
-JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。
+{% asset_img indent.jpg "使用 ESLint 提升程式碼品質和寫作風格" %}
 
+JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。
 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ [ESLint](http://eslint.org/)，不但是開發 [React](https://facebook.github.io/react/) 時期必備良藥，也是避免你寫爛扣的解藥之一。
+
 
 ## 淺談 linter 與 eslint
 
-``linter`` 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：
+`linter` 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：
 
-1. [JSLint](https://github.com/douglascrockford/JSLint)
-  * 檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。
 
-2. [JSHint](https://github.com/jshint/jshint)
-  * 有大大從 JSLint 這個專案 fork 出來改，有了設定檔可以改，擴展了原本 JSLint 的自由度；但是由於缺乏了讓使用者自行定義的規範，也就難以延伸。 
+* [JSLint](https://github.com/douglascrockford/JSLint)
+  檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。
 
-3. [ESLint](http://eslint.org/)
-  * 近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具。尤其是大量運用在開發 [React](https://facebook.github.io/react/) 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。
+* [JSHint](https://github.com/jshint/jshint)
+  有大大從 JSLint 這個專案 fork 出來改，有了設定檔可以改，擴展了原本 JSLint 的自由度；但是由於缺乏了讓使用者自行定義的規範，也就難以延伸。
 
-4. [TypeScript](https://www.typescriptlang.org/)
-  * TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： "JavaScript that scales"。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，而且它居然大量用在 [Angular](https://angular.io/) 2 跟 4...
+* [ESLint](http://eslint.org/)
+  近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具。尤其是大量運用在開發 [React](https://facebook.github.io/react/) 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。
 
-5. [Flow](https://flow.org/)
-  * 一個靜態型別的 Type Checker， Facebook 為了對抗迎接而來的 TypeScript 所開發的工具，能讓已經習慣 JavaScript 的開發者不用去學 TypeScript，直接使用 Flow，讓你的 JavaScipt 大變身。這是開發 [React](https://facebook.github.io/react/) 未來的趨勢和潮流，就算你不用，React 自己都用了...
+* [TypeScript](https://www.typescriptlang.org/)
+  TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： "JavaScript that scales"。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，而且它居然大量用在 [Angular](https://angular.io/) 2 跟 4...
 
-以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 ``eslint`` 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。
+* [Flow](https://flow.org/)
+  一個靜態型別的 Type Checker， Facebook 為了對抗迎接而來的 TypeScript 所開發的工具，能讓已經習慣 JavaScript 的開發者不用去學 TypeScript，直接使用 Flow，讓你的 JavaScipt 大變身。這是開發 [React](https://facebook.github.io/react/) 未來的趨勢和潮流，就算你不用，React 自己都用了...
 
-在使用 ``eslint`` 之前，先來看看效果如何：
-![unused-var](no-unused-vars.jpg)
-<%- image_tag('./indent.jpg') %>
-
-變數 a 因為宣告過了，但是沒有被使用，而且指出違反規則：``no-ununsed-vars``
-
-再來看看另一種情況：
-![indent]('./indent.jpg')
-
-他警告你縮拍縮錯了。雖然這樣的程式碼還是可以通，但是違反了 lint 規則。``eslint`` 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。
+以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 ``eslint`` 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。`eslint` 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。
 
 ## 安裝 eslint
+
 要使用 lint 檢查工具，必須準備好三樣東西： ``編輯器外掛`` + ``eslint`` + ``規則與設定檔``
 
 ### 編輯器外掛
+
 編輯器外掛是要讓你的編輯器上面會出現不時出現 eslint 的抱怨，在開發時提出警告 ``on the fly``。 在此紀錄前端開發時常用的這些，不外乎 [Sublime Text](https://www.sublimetext.com/)、[Atom](https://atom.io/) 與近期新秀 [VSCode](https://code.visualstudio.com/)
 
 1. Sublime Text 安裝
@@ -64,6 +59,7 @@ JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不
   * 這個你直接在 VSCode 的 Extensions 搜尋 ``Eslint`` 就找到了
 
 ### 安裝 eslint
+
 [eslint](https://github.com/eslint/eslint) 本身透過 npm 安裝即可。個人不建議全域安裝，因為他是 by 各個專案底下，而且搭配不同的規則所使用的版本可能不同。
 
 ```sh
@@ -72,9 +68,10 @@ $ npm install --save-dev eslint
 
 ### 規則與設定檔
 
-網路上有非常多大神制定好的規則可以套用，現以 [eslint-config-standard](https://github.com/feross/eslint-config-standard) 為例，他是基於 [JavaScript Standard Style ](https://standardjs.com/) 為出發的 coding style.
+網路上有非常多大神制定好的規則可以套用，現以 [eslint-config-standard](https://github.com/feross/eslint-config-standard) 為例，他是基於 [JavaScript Standard Style](https://standardjs.com/) 為出發的 coding style.
 
 1. 安裝規則
+
 ```sh
 $ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promiseeslint-plugin-import eslint-plugin-node
 ```
@@ -82,18 +79,21 @@ $ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-pl
 WTF? 嚇死了，為什麼在 ``eslint-config-standard`` 後面多出了這麼多東西？因為這些規則都是 follow eslint 的 [Shareable Configs](http://eslint.org/docs/developer-guide/shareable-configs)規範，他讓你允許分享你自訂的規則模組到 npm 上面給大家使用，但是相對的需要安裝很多這些所謂的 ``peerDependencies``，安裝相對麻煩，待會底下會講更快的安裝方式。
 
 2. 設定檔案 .eslintrc.*
+
 ``eslint`` 由於｀自由度高，使用時需要先準備一份 global 的設定檔，讓 ``eslint`` 可以根據這個設定來看懂規則並發揮它的功能。
 
 新增設定檔格式有兩種方式，一種是在專案根目錄新增一個``隱藏檔``(如同 Git 的 .gitignore 或是 Babel 的 .babelrc 的做法雷同)，另一種是直接寫在 ``package.json``裡面，使用屬性 ``eslintConfig``。由於寫在 package.json 裡面太不明顯了，各人偏好新增隱藏檔的方式來開啟它。
 
 新增設定檔的格式非常多樣，包含 ``JavaScript 物件``、``YAML``、``json``，每一個副檔名都不相同，想了解進一步的寫法可以看[這裡](http://eslint.org/docs/user-guide/configuring#configuration-file-formats)，我習慣寫成 json。
 
-``.eslint.json``
+__.eslint.json__
+
 ```json
   {
     "extends": "standard"
   }
 ```
+
 ``extends`` 表示延伸原本的規則，你剛剛安裝的 [eslint-config-standard](https://github.com/feross/eslint-config-standard) 就是在這裡做延伸；想看看其他全域變數可以參考這裡：[Configuring ESLint](http://eslint.org/docs/user-guide/configuring)。
 
 ``eslint``環境在此設定完畢（汗），如果沒有快一點的安裝方式，你可能會殺了我。
