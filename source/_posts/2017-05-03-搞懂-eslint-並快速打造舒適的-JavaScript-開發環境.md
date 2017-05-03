@@ -14,7 +14,7 @@ JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值�
 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ [ESLint](http://eslint.org/)，不但是開發 [React](https://facebook.github.io/react/) 時期必備良藥，也是避免你寫爛扣的解藥之一。
 
 
-## 淺談 linter 與 eslint
+# 淺談 linter 與 eslint
 
 `linter` 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：
 
@@ -36,11 +36,11 @@ JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不
 
 以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 ``eslint`` 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。`eslint` 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。
 
-## 安裝 eslint
+# 安裝 eslint
 
 要使用 lint 檢查工具，必須準備好三樣東西： ``編輯器外掛`` + ``eslint`` + ``規則與設定檔``
 
-### 編輯器外掛
+## 編輯器外掛
 
 編輯器外掛是要讓你的編輯器上面會出現不時出現 eslint 的抱怨，在開發時提出警告 ``on the fly``。 在此紀錄前端開發時常用的這些，不外乎 [Sublime Text](https://www.sublimetext.com/)、[Atom](https://atom.io/) 與近期新秀 [VSCode](https://code.visualstudio.com/)
 
@@ -58,7 +58,7 @@ JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不
   * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   * 這個你直接在 VSCode 的 Extensions 搜尋 ``Eslint`` 就找到了
 
-### 安裝 eslint
+## 安裝 eslint
 
 [eslint](https://github.com/eslint/eslint) 本身透過 npm 安裝即可。個人不建議全域安裝，因為他是 by 各個專案底下，而且搭配不同的規則所使用的版本可能不同。
 
@@ -66,7 +66,7 @@ JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不
 $ npm install --save-dev eslint
 ```
 
-### 規則與設定檔
+## 規則與設定檔
 
 網路上有非常多大神制定好的規則可以套用，現以 [eslint-config-standard](https://github.com/feross/eslint-config-standard) 為例，他是基於 [JavaScript Standard Style](https://standardjs.com/) 為出發的 coding style.
 
@@ -98,7 +98,7 @@ __.eslint.json__
 
 ``eslint``環境在此設定完畢（汗），如果沒有快一點的安裝方式，你可能會殺了我。
 
-## 使用 ``install-pperdeps`` 快速安裝 peer dependencies
+# 使用 ``install-pperdeps`` 快速安裝 peer dependencies
 
 由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 ``npm`` 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 ``info``，並查看 **peerDependencies**：
 
@@ -134,17 +134,21 @@ $ npm install --save-dev install-peerdeps # install locally
 ```
 
 2. 安裝 eslint-config-* 及其相依套件
-  在全域安裝``install-peerdeps``後就可以直接使用：
 
-  ```sh
-    install-peerdeps eslint-config-standard --dev
-  ```
-  執行結果：
-  ```sh
-    install-peerdeps v1.1.3
-    Installing peerdeps for eslint-config-standard@10.2.1.
-    npm install eslint-config-standard eslint@>=3.19.0 eslint-plugin-import@>=2.2.0 eslint-plugin-node@>=4.2.2 eslint-plugin-promise@>=3.5.0 eslint-plugin-standard@>=3.0.0 --save-dev
-  ```
+在全域安裝``install-peerdeps``後就可以直接使用：
+
+```sh
+  install-peerdeps eslint-config-standard --dev
+```
+
+執行結果：
+
+```sh
+  install-peerdeps v1.1.3
+  Installing peerdeps for eslint-config-standard@10.2.1.
+  npm install eslint-config-standard eslint@>=3.19.0 eslint-plugin-import@>=2.2.0 eslint-plugin-node@>=4.2.2 eslint-plugin-promise@>=3.5.0 eslint-plugin-standard@>=3.0.0 --save-dev
+```
+
 see? 一次把 ``eslint-config-standard`` 及相依套件安裝完畢，當然包含了 ``eslint`` 本身。
 
 如果你今天是開發 ``React``, 那你一定要使用 Airbnb 出的 [JavaScript Style Guide](https://github.com/airbnb/javascript)，他們制定的規則全世界的 JavaScript 開發者都在用。因為它們太哈 React 了，基於愛屋及烏的心態，我也跟風（茶）。
@@ -156,6 +160,7 @@ see? 一次把 ``eslint-config-standard`` 及相依套件安裝完畢，當然�
 ```sh
 $ install-peerdeps eslint-config-airbnb --dev
 ```
+
 一樣，他自動幫我們安裝了 ``eslint``, ``eslint-plugin-import``, ``eslint-plugin-react``, 以及``eslint-plugin-jsx-a11y``。
 
 最後記得，在 ``.eslintrc.json`` 做延伸：
