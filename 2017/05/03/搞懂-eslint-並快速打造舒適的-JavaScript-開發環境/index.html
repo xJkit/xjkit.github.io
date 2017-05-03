@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,debug," />
 
 
 
@@ -90,15 +90,20 @@
 
 
 
-<meta name="description" content="小街。技術隨筆。熱愛 JavaScript－詭譎卻強大的全端語言。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Suite John 練功街">
-<meta property="og:url" content="http://xjkit.github.io/index.html">
+<meta name="description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta name="keywords" content="javascript,debug">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
+<meta property="og:url" content="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/index.html">
 <meta property="og:site_name" content="Suite John 練功街">
-<meta property="og:description" content="小街。技術隨筆。熱愛 JavaScript－詭譎卻強大的全端語言。">
+<meta property="og:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta property="og:image" content="http://xjkit.github.io/2017-05-03-搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/no-unused-vars.jpg">
+<meta property="og:image" content="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/indent.jpg">
+<meta property="og:updated_time" content="2017-05-03T03:50:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Suite John 練功街">
-<meta name="twitter:description" content="小街。技術隨筆。熱愛 JavaScript－詭譎卻強大的全端語言。">
+<meta name="twitter:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
+<meta name="twitter:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta name="twitter:image" content="http://xjkit.github.io/2017-05-03-搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/no-unused-vars.jpg">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://xjkit.github.io/"/>
+  <link rel="canonical" href="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/"/>
 
 
 
 
 
-  <title>Suite John 練功街</title>
+  <title>搞懂 eslint 並快速打造舒適的 JavaScript 開發環境 | Suite John 練功街</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -157,9 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,9 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -274,10 +277,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/" itemprop="url">
-                  搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
-                </a>
+                搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
               
             
           </h1>
@@ -360,9 +360,7 @@
       
 
       
-        
-          
-            <p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。</p>
+        <p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。</p>
 <p>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
 <h2 id="淺談-linter-與-eslint"><a href="#淺談-linter-與-eslint" class="headerlink" title="淺談 linter 與 eslint"></a>淺談 linter 與 eslint</h2><p><code>linter</code> 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：</p>
 <ol>
@@ -465,42 +463,58 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"airbnb"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果你也有好用的工具，歡迎留言分享囉。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/debug/" rel="tag"># debug</a>
+          
+        </div>
+      
+
+      
+        
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -508,6 +522,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -527,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -590,6 +624,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#淺談-linter-與-eslint"><span class="nav-number">1.</span> <span class="nav-text">淺談 linter 與 eslint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-eslint"><span class="nav-number">2.</span> <span class="nav-text">安裝 eslint</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#編輯器外掛"><span class="nav-number">2.1.</span> <span class="nav-text">編輯器外掛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-eslint-1"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#規則與設定檔"><span class="nav-number">2.3.</span> <span class="nav-text">規則與設定檔</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-install-pperdeps-快速安裝-peer-dependencies"><span class="nav-number">3.</span> <span class="nav-text">使用 install-pperdeps 快速安裝 peer dependencies</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -710,6 +760,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -727,6 +781,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
+          this.page.identifier = '2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
+          this.page.title = '搞懂 eslint 並快速打造舒適的 JavaScript 開發環境';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
