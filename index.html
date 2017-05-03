@@ -362,42 +362,22 @@
       
         
           
-            <p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。</p>
-<p>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
+            <img src="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/indent.jpg" alt="使用 ESLint 提升程式碼品質和寫作風格" title="使用 ESLint 提升程式碼品質和寫作風格">
+<p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。<br>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
 <h2 id="淺談-linter-與-eslint"><a href="#淺談-linter-與-eslint" class="headerlink" title="淺談 linter 與 eslint"></a>淺談 linter 與 eslint</h2><p><code>linter</code> 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：</p>
-<ol>
-<li><p><a href="https://github.com/douglascrockford/JSLint" target="_blank" rel="external">JSLint</a></p>
 <ul>
-<li>檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。</li>
-</ul>
+<li><p><a href="https://github.com/douglascrockford/JSLint" target="_blank" rel="external">JSLint</a><br>檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。</p>
 </li>
-<li><p><a href="https://github.com/jshint/jshint" target="_blank" rel="external">JSHint</a></p>
-<ul>
-<li>有大大從 JSLint 這個專案 fork 出來改，有了設定檔可以改，擴展了原本 JSLint 的自由度；但是由於缺乏了讓使用者自行定義的規範，也就難以延伸。 </li>
-</ul>
+<li><p><a href="https://github.com/jshint/jshint" target="_blank" rel="external">JSHint</a><br>有大大從 JSLint 這個專案 fork 出來改，有了設定檔可以改，擴展了原本 JSLint 的自由度；但是由於缺乏了讓使用者自行定義的規範，也就難以延伸。</p>
 </li>
-<li><p><a href="http://eslint.org/" target="_blank" rel="external">ESLint</a></p>
-<ul>
-<li>近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具。尤其是大量運用在開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。</li>
-</ul>
+<li><p><a href="http://eslint.org/" target="_blank" rel="external">ESLint</a><br>近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具。尤其是大量運用在開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。</p>
 </li>
-<li><p><a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a></p>
-<ul>
-<li>TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： “JavaScript that scales”。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，而且它居然大量用在 <a href="https://angular.io/" target="_blank" rel="external">Angular</a> 2 跟 4…</li>
-</ul>
+<li><p><a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a><br>TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： “JavaScript that scales”。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，而且它居然大量用在 <a href="https://angular.io/" target="_blank" rel="external">Angular</a> 2 跟 4…</p>
 </li>
-<li><p><a href="https://flow.org/" target="_blank" rel="external">Flow</a></p>
-<ul>
-<li>一個靜態型別的 Type Checker， Facebook 為了對抗迎接而來的 TypeScript 所開發的工具，能讓已經習慣 JavaScript 的開發者不用去學 TypeScript，直接使用 Flow，讓你的 JavaScipt 大變身。這是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 未來的趨勢和潮流，就算你不用，React 自己都用了…</li>
-</ul>
+<li><p><a href="https://flow.org/" target="_blank" rel="external">Flow</a><br>一個靜態型別的 Type Checker， Facebook 為了對抗迎接而來的 TypeScript 所開發的工具，能讓已經習慣 JavaScript 的開發者不用去學 TypeScript，直接使用 Flow，讓你的 JavaScipt 大變身。這是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 未來的趨勢和潮流，就算你不用，React 自己都用了…</p>
 </li>
-</ol>
-<p>以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 <code>eslint</code> 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。</p>
-<p>在使用 <code>eslint</code> 之前，先來看看效果如何：<br><img src="/2017-05-03-搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/no-unused-vars.jpg" width="30%" alt="Flight" title="Flight"></p>
-{% asset_img indent.jpg "wrap 1" %}
-<p>變數 a 因為宣告過了，但是沒有被使用，而且指出違反規則：<code>no-ununsed-vars</code></p>
-<p>再來看看另一種情況：<br><img src="indent.jpg" alt="indent"></p>
-<p>他警告你縮拍縮錯了。雖然這樣的程式碼還是可以通，但是違反了 lint 規則。<code>eslint</code> 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。</p>
+</ul>
+<p>以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 <code>eslint</code> 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。<code>eslint</code> 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。</p>
 <h2 id="安裝-eslint"><a href="#安裝-eslint" class="headerlink" title="安裝 eslint"></a>安裝 eslint</h2><p>要使用 lint 檢查工具，必須準備好三樣東西： <code>編輯器外掛</code> + <code>eslint</code> + <code>規則與設定檔</code></p>
 <h3 id="編輯器外掛"><a href="#編輯器外掛" class="headerlink" title="編輯器外掛"></a>編輯器外掛</h3><p>編輯器外掛是要讓你的編輯器上面會出現不時出現 eslint 的抱怨，在開發時提出警告 <code>on the fly</code>。 在此紀錄前端開發時常用的這些，不外乎 <a href="https://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>、<a href="https://atom.io/" target="_blank" rel="external">Atom</a> 與近期新秀 <a href="https://code.visualstudio.com/" target="_blank" rel="external">VSCode</a></p>
 <ol>
@@ -424,18 +404,20 @@
 </ol>
 <h3 id="安裝-eslint-1"><a href="#安裝-eslint-1" class="headerlink" title="安裝 eslint"></a>安裝 eslint</h3><p><a href="https://github.com/eslint/eslint" target="_blank" rel="external">eslint</a> 本身透過 npm 安裝即可。個人不建議全域安裝，因為他是 by 各個專案底下，而且搭配不同的規則所使用的版本可能不同。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev eslint</div></pre></td></tr></table></figure>
-<h3 id="規則與設定檔"><a href="#規則與設定檔" class="headerlink" title="規則與設定檔"></a>規則與設定檔</h3><p>網路上有非常多大神制定好的規則可以套用，現以 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 為例，他是基於 <a href="https://standardjs.com/" target="_blank" rel="external">JavaScript Standard Style </a> 為出發的 coding style.</p>
+<h3 id="規則與設定檔"><a href="#規則與設定檔" class="headerlink" title="規則與設定檔"></a>規則與設定檔</h3><p>網路上有非常多大神制定好的規則可以套用，現以 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 為例，他是基於 <a href="https://standardjs.com/" target="_blank" rel="external">JavaScript Standard Style</a> 為出發的 coding style.</p>
 <ol>
-<li>安裝規則<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promiseeslint-plugin-import eslint-plugin-node</div></pre></td></tr></table></figure>
-</li>
+<li>安裝規則</li>
 </ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promiseeslint-plugin-import eslint-plugin-node</div></pre></td></tr></table></figure>
 <p>WTF? 嚇死了，為什麼在 <code>eslint-config-standard</code> 後面多出了這麼多東西？因為這些規則都是 follow eslint 的 <a href="http://eslint.org/docs/developer-guide/shareable-configs" target="_blank" rel="external">Shareable Configs</a>規範，他讓你允許分享你自訂的規則模組到 npm 上面給大家使用，但是相對的需要安裝很多這些所謂的 <code>peerDependencies</code>，安裝相對麻煩，待會底下會講更快的安裝方式。</p>
 <ol>
-<li>設定檔案 .eslintrc.*<br><code>eslint</code> 由於｀自由度高，使用時需要先準備一份 global 的設定檔，讓 <code>eslint</code> 可以根據這個設定來看懂規則並發揮它的功能。</li>
+<li>設定檔案 .eslintrc.*</li>
 </ol>
+<p><code>eslint</code> 由於｀自由度高，使用時需要先準備一份 global 的設定檔，讓 <code>eslint</code> 可以根據這個設定來看懂規則並發揮它的功能。</p>
 <p>新增設定檔格式有兩種方式，一種是在專案根目錄新增一個<code>隱藏檔</code>(如同 Git 的 .gitignore 或是 Babel 的 .babelrc 的做法雷同)，另一種是直接寫在 <code>package.json</code>裡面，使用屬性 <code>eslintConfig</code>。由於寫在 package.json 裡面太不明顯了，各人偏好新增隱藏檔的方式來開啟它。</p>
 <p>新增設定檔的格式非常多樣，包含 <code>JavaScript 物件</code>、<code>YAML</code>、<code>json</code>，每一個副檔名都不相同，想了解進一步的寫法可以看<a href="http://eslint.org/docs/user-guide/configuring#configuration-file-formats" target="_blank" rel="external">這裡</a>，我習慣寫成 json。</p>
-<p><code>.eslint.json</code><br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"standard"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>.eslint.json</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"standard"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>extends</code> 表示延伸原本的規則，你剛剛安裝的 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 就是在這裡做延伸；想看看其他全域變數可以參考這裡：<a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">Configuring ESLint</a>。</p>
 <p><code>eslint</code>環境在此設定完畢（汗），如果沒有快一點的安裝方式，你可能會殺了我。</p>
 <h2 id="使用-install-pperdeps-快速安裝-peer-dependencies"><a href="#使用-install-pperdeps-快速安裝-peer-dependencies" class="headerlink" title="使用 install-pperdeps 快速安裝 peer dependencies"></a>使用 <code>install-pperdeps</code> 快速安裝 peer dependencies</h2><p>由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 <code>npm</code> 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 <code>info</code>，並查看 <strong>peerDependencies</strong>：</p>
