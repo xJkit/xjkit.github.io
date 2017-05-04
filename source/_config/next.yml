@@ -307,6 +307,8 @@ disqus:
   shortname: xjkit
   count: true
 
+disqus_shortname: xjkit
+
 # Hypercomments
 #hypercomments_id:
 
