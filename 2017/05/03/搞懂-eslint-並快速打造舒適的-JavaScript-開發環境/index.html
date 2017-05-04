@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta name="description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta name="keywords" content="javascript,debug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
 <meta property="og:url" content="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/index.html">
 <meta property="og:site_name" content="Suite John 練功街">
-<meta property="og:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta property="og:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta property="og:image" content="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/indent.jpg">
-<meta property="og:updated_time" content="2017-05-03T17:06:34.000Z">
+<meta property="og:updated_time" content="2017-05-04T04:11:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
-<meta name="twitter:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正">
+<meta name="twitter:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta name="twitter:image" content="http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/indent.jpg">
 
 
@@ -260,7 +260,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jay Chung">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -272,14 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">搞懂 eslint 並快速打造舒適的 JavaScript 開發環境</h1>
         
 
         <div class="post-meta">
@@ -327,17 +320,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -360,52 +342,56 @@
 
       
         <img src="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/indent.jpg" alt="使用 ESLint 提升程式碼品質和寫作風格" title="使用 ESLint 提升程式碼品質和寫作風格">
-<p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數值會依照當下所給的資料型態自動變更。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。<br>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
-<h2 id="淺談-linter-與-eslint"><a href="#淺談-linter-與-eslint" class="headerlink" title="淺談 linter 與 eslint"></a>淺談 linter 與 eslint</h2><p><code>linter</code> 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：</p>
+<p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。<br>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
+<h1 id="淺談-linter-與-eslint"><a href="#淺談-linter-與-eslint" class="headerlink" title="淺談 linter 與 eslint"></a>淺談 linter 與 eslint</h1><p><code>linter</code> 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：</p>
 <ul>
 <li><p><a href="https://github.com/douglascrockford/JSLint" target="_blank" rel="external">JSLint</a><br>檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。</p>
 </li>
 <li><p><a href="https://github.com/jshint/jshint" target="_blank" rel="external">JSHint</a><br>有大大從 JSLint 這個專案 fork 出來改，有了設定檔可以改，擴展了原本 JSLint 的自由度；但是由於缺乏了讓使用者自行定義的規範，也就難以延伸。</p>
 </li>
-<li><p><a href="http://eslint.org/" target="_blank" rel="external">ESLint</a><br>近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具。尤其是大量運用在開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。</p>
+<li><p><a href="http://eslint.org/" target="_blank" rel="external">ESLint</a><br>近代新起之秀，具有使用者自行定義的延展性，而且有設定檔，哪些規則要開要關自由心證，非常方便。不僅如此，還可以使用別人定義好的規範來使用，已經成為了前端專案開發的必備工具，尤其是大量運用在開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 專案上面。缺點是使用它還需要裝一些有的沒的，對於剛上手來說相對麻煩，但是你往下看就發現其實還好。</p>
 </li>
-<li><p><a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a><br>TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： “JavaScript that scales”。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，而且它居然大量用在 <a href="https://angular.io/" target="_blank" rel="external">Angular</a> 2 跟 4…</p>
+<li><p><a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a><br>TypeScript 其實算是一個全新的程式語言， M$ 所發明，基於 JavaScript 的超集合(superset)，可視為靜態型別版本的 JavaScript。TypeScript 在執行前必須先編譯，程式碼也必須先宣告資料型態，就跟寫 C 一樣。由於瀏覽器不支援 TypeScript, 用它開發最終會被編譯為 JavaScript，好處是執行前在編譯期間的程式碼錯誤就會被發現，專案膨脹後會發現非常好用，如同官網所寫的： “JavaScript that scales”。缺點是對於已經熟悉 JavaScript 的開發者來說很不習慣，也有一些學習曲線在，不是大家都能接受，雖然它居然被大量用在 <a href="https://angular.io/" target="_blank" rel="external">Angular</a> 2 跟 4…</p>
 </li>
 <li><p><a href="https://flow.org/" target="_blank" rel="external">Flow</a><br>一個靜態型別的 Type Checker， Facebook 為了對抗迎接而來的 TypeScript 所開發的工具，能讓已經習慣 JavaScript 的開發者不用去學 TypeScript，直接使用 Flow，讓你的 JavaScipt 大變身。這是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 未來的趨勢和潮流，就算你不用，React 自己都用了…</p>
 </li>
 </ul>
 <p>以上有這麼多工具僅供參考，真的不必全部學會，也沒有必要。然而對我來說，要維持原汁原味的 JavaScript，使用 <code>eslint</code> 是最好的選擇，僅需要搞好開發環境就好，無須多餘的語法需要學習。<code>eslint</code> 根據不同的規則來制定寫程式的風格，讓 follow 同一個規則下的程式碼具有一致性的 coding style，這個在對於同一個專案的工程師合作上非常有幫助，因為你的同事不會因為你獨樹一幟的寫法而充滿問號，你也不會因為神一般的隊友寫出的 code 讓你困惑。</p>
-<h2 id="安裝-eslint"><a href="#安裝-eslint" class="headerlink" title="安裝 eslint"></a>安裝 eslint</h2><p>要使用 lint 檢查工具，必須準備好三樣東西： <code>編輯器外掛</code> + <code>eslint</code> + <code>規則與設定檔</code></p>
-<h3 id="編輯器外掛"><a href="#編輯器外掛" class="headerlink" title="編輯器外掛"></a>編輯器外掛</h3><p>編輯器外掛是要讓你的編輯器上面會出現不時出現 eslint 的抱怨，在開發時提出警告 <code>on the fly</code>。 在此紀錄前端開發時常用的這些，不外乎 <a href="https://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>、<a href="https://atom.io/" target="_blank" rel="external">Atom</a> 與近期新秀 <a href="https://code.visualstudio.com/" target="_blank" rel="external">VSCode</a></p>
-<ol>
-<li><p>Sublime Text 安裝</p>
+<h1 id="安裝-eslint"><a href="#安裝-eslint" class="headerlink" title="安裝 eslint"></a>安裝 eslint</h1><p>要使用 lint 檢查工具，必須準備好三樣東西： <code>編輯器外掛</code> + <code>eslint</code> + <code>規則與設定檔</code></p>
+<h2 id="編輯器外掛"><a href="#編輯器外掛" class="headerlink" title="編輯器外掛"></a>編輯器外掛</h2><p>編輯器外掛是要讓你的編輯器上面會出現不時出現 eslint 的抱怨，在開發時提出警告 <code>on the fly</code>。 在此紀錄前端開發時常用的這些，不外乎 <a href="https://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>、<a href="https://atom.io/" target="_blank" rel="external">Atom</a> 與近期新秀 <a href="https://code.visualstudio.com/" target="_blank" rel="external">VSCode</a></p>
 <ul>
+<li><p>Sublime Text 安裝</p>
+<ol>
 <li><a href="https://github.com/SublimeLinter/SublimeLinter3/blob/master/docs/index.rst" target="_blank" rel="external">SublimeLinter</a></li>
 <li><a href="https://github.com/roadhump/SublimeLinter-eslint" target="_blank" rel="external">SublimeLinter-eslint</a></li>
-</ul>
+</ol>
 </li>
-<li><p>Atom 安裝 </p>
-<ul>
+<li><p>Atom 安裝</p>
+<ol>
 <li><a href="https://github.com/steelbrain/linter" target="_blank" rel="external">linter</a></li>
 <li><a href="https://github.com/AtomLinter/linter-eslint" target="_blank" rel="external">linter-eslint</a></li>
+</ol>
+<ul>
 <li>linter 是 Atom 編輯器在顯示錯誤的界面，而 linter-eslint 是它的外掛</li>
 <li>上列套件直接在 Atom 編輯器裡面的設定頁面安裝套件即可，或是使用 command line 透過 <code>apm</code> 安裝。</li>
 </ul>
 </li>
 <li><p>VSCode 安裝</p>
-<ul>
+<ol>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="external">ESLint</a></li>
-<li>這個你直接在 VSCode 的 Extensions 搜尋 <code>Eslint</code> 就找到了</li>
+</ol>
+<ul>
+<li>這個你直接在 VSCode 的 Extensions 搜尋 <code>eslint</code> 就找到了</li>
 </ul>
 </li>
-</ol>
-<h3 id="安裝-eslint-1"><a href="#安裝-eslint-1" class="headerlink" title="安裝 eslint"></a>安裝 eslint</h3><p><a href="https://github.com/eslint/eslint" target="_blank" rel="external">eslint</a> 本身透過 npm 安裝即可。個人不建議全域安裝，因為他是 by 各個專案底下，而且搭配不同的規則所使用的版本可能不同。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev eslint</div></pre></td></tr></table></figure>
-<h3 id="規則與設定檔"><a href="#規則與設定檔" class="headerlink" title="規則與設定檔"></a>規則與設定檔</h3><p>網路上有非常多大神制定好的規則可以套用，現以 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 為例，他是基於 <a href="https://standardjs.com/" target="_blank" rel="external">JavaScript Standard Style</a> 為出發的 coding style.</p>
+</ul>
+<h2 id="安裝-eslint-函式庫"><a href="#安裝-eslint-函式庫" class="headerlink" title="安裝 eslint 函式庫"></a>安裝 eslint 函式庫</h2><p><a href="https://github.com/eslint/eslint" target="_blank" rel="external">eslint</a> 本身透過 npm 安裝即可。個人不建議全域安裝，因為他是 by 各個專案底下，而且搭配不同的規則所使用的版本可能不同。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev eslint</div></pre></td></tr></table></figure>
+<h2 id="規則與設定檔"><a href="#規則與設定檔" class="headerlink" title="規則與設定檔"></a>規則與設定檔</h2><p>網路上有非常多大神制定好的規則可以套用，現以 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 為例，他是基於 <a href="https://standardjs.com/" target="_blank" rel="external">JavaScript Standard Style</a> 為出發的 coding style.</p>
 <ol>
 <li>安裝規則</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promiseeslint-plugin-import eslint-plugin-node</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node</div></pre></td></tr></table></figure>
 <p>WTF? 嚇死了，為什麼在 <code>eslint-config-standard</code> 後面多出了這麼多東西？因為這些規則都是 follow eslint 的 <a href="http://eslint.org/docs/developer-guide/shareable-configs" target="_blank" rel="external">Shareable Configs</a>規範，他讓你允許分享你自訂的規則模組到 npm 上面給大家使用，但是相對的需要安裝很多這些所謂的 <code>peerDependencies</code>，安裝相對麻煩，待會底下會講更快的安裝方式。</p>
 <ol>
 <li>設定檔案 .eslintrc.*</li>
@@ -413,11 +399,10 @@
 <p><code>eslint</code> 由於｀自由度高，使用時需要先準備一份 global 的設定檔，讓 <code>eslint</code> 可以根據這個設定來看懂規則並發揮它的功能。</p>
 <p>新增設定檔格式有兩種方式，一種是在專案根目錄新增一個<code>隱藏檔</code>(如同 Git 的 .gitignore 或是 Babel 的 .babelrc 的做法雷同)，另一種是直接寫在 <code>package.json</code>裡面，使用屬性 <code>eslintConfig</code>。由於寫在 package.json 裡面太不明顯了，各人偏好新增隱藏檔的方式來開啟它。</p>
 <p>新增設定檔的格式非常多樣，包含 <code>JavaScript 物件</code>、<code>YAML</code>、<code>json</code>，每一個副檔名都不相同，想了解進一步的寫法可以看<a href="http://eslint.org/docs/user-guide/configuring#configuration-file-formats" target="_blank" rel="external">這裡</a>，我習慣寫成 json。</p>
-<p><strong>.eslint.json</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"standard"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><figcaption><span>.eslint.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"standard"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>extends</code> 表示延伸原本的規則，你剛剛安裝的 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 就是在這裡做延伸；想看看其他全域變數可以參考這裡：<a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">Configuring ESLint</a>。</p>
 <p><code>eslint</code>環境在此設定完畢（汗），如果沒有快一點的安裝方式，你可能會殺了我。</p>
-<h2 id="使用-install-pperdeps-快速安裝-peer-dependencies"><a href="#使用-install-pperdeps-快速安裝-peer-dependencies" class="headerlink" title="使用 install-pperdeps 快速安裝 peer dependencies"></a>使用 <code>install-pperdeps</code> 快速安裝 peer dependencies</h2><p>由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 <code>npm</code> 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 <code>info</code>，並查看 <strong>peerDependencies</strong>：</p>
+<h1 id="使用-install-pperdeps-快速安裝-peer-dependencies"><a href="#使用-install-pperdeps-快速安裝-peer-dependencies" class="headerlink" title="使用 install-pperdeps 快速安裝 peer dependencies"></a>使用 <code>install-pperdeps</code> 快速安裝 peer dependencies</h1><p>由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 <code>npm</code> 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 <code>info</code>，並查看 <strong>peerDependencies</strong>：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ npm info eslint-config-standard peerDependencies</div><div class="line"><span class="comment"># npm 搭配 info, view, v, 或是 show 都是相同的</span></div><div class="line"></div><div class="line">&#123; eslint: <span class="string">'&gt;=3.19.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-import'</span>: <span class="string">'&gt;=2.2.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-node'</span>: <span class="string">'&gt;=4.2.2'</span>,</div><div class="line">  <span class="string">'eslint-plugin-promise'</span>: <span class="string">'&gt;=3.5.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-standard'</span>: <span class="string">'&gt;=3.0.0'</span> &#125;</div></pre></td></tr></table></figure>
 <p>原來這個 <code>eslint-config-standard</code> 所搭配的相依套件及其版本號都在這裡，那我要安裝一個規則這麼麻煩阿？不但要先安裝 <code>eslint</code>，還要裝 <code>eslint-config-standard</code> 及其相依套件，最好版本還要正確。這樣搞豈不崩潰。在這個時候一定有 shell 魔人說話，我把這段資訊抓出來一次安裝：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(</div><div class="line">  <span class="built_in">export</span> PKG=eslint-config-standard;</div><div class="line">  npm info <span class="string">"<span class="variable">$PKG</span>@latest"</span> peerDependencies --json | <span class="built_in">command</span> sed <span class="string">'s/[\&#123;\&#125;,]//g ; s/: /@/g'</span> | xargs npm install --save-dev <span class="string">"<span class="variable">$PKG</span>@latest"</span></div><div class="line">)</div></pre></td></tr></table></figure>
@@ -426,19 +411,17 @@
 <li>安裝 install-peerdeps</li>
 </ol>
 <p><a href="https://github.com/nathanhleung/install-peerdeps" target="_blank" rel="external">install-peerdeps</a> 顧名思義，就是 <code>Install Peer Dependencies</code> 的意思，在安裝 npm 底下的 eslint 規則非常迅速。他根據檢查 <code>npm info</code> 裡面的 peerDependencies 來判定安裝的相依套件。重點！除此之外，他還可以使用 <a href="https://github.com/yarnpkg/yarn" target="_blank" rel="external">Yarn</a> 來安裝套件！不就超快嘛！趕快來試試：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install -g install-peerdeps <span class="comment"># install globally</span></div><div class="line">$ npm install --save-dev install-peerdeps <span class="comment"># install locally</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g install-peerdeps <span class="comment"># install globally</span></div><div class="line">npm install --save-dev install-peerdeps <span class="comment"># install locally</span></div></pre></td></tr></table></figure>
 <ol>
-<li><p>安裝 eslint-config-* 及其相依套件<br>在全域安裝<code>install-peerdeps</code>後就可以直接使用：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">install-peerdeps eslint-config-standard --dev</div></pre></td></tr></table></figure>
-<p>執行結果：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">install-peerdeps v1.1.3</div><div class="line">Installing peerdeps <span class="keyword">for</span> eslint-config-standard@10.2.1.</div><div class="line">npm install eslint-config-standard eslint@&gt;=3.19.0 eslint-plugin-import@&gt;=2.2.0 eslint-plugin-node@&gt;=4.2.2 eslint-plugin-promise@&gt;=3.5.0 eslint-plugin-standard@&gt;=3.0.0 --save-dev</div></pre></td></tr></table></figure>
-</li>
+<li>安裝 eslint-config-* 及其相依套件</li>
 </ol>
+<p>在全域安裝<code>install-peerdeps</code>後就可以直接使用：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ install-peerdeps eslint-config-standard --dev</div><div class="line"><span class="comment"># 執行結果 #</span></div><div class="line">install-peerdeps v1.1.3</div><div class="line">Installing peerdeps <span class="keyword">for</span> eslint-config-standard@10.2.1.</div><div class="line">npm install eslint-config-standard eslint@&gt;=3.19.0 eslint-plugin-import@&gt;=2.2.0 eslint-plugin-node@&gt;=4.2.2 eslint-plugin-promise@&gt;=3.5.0 eslint-plugin-standard@&gt;=3.0.0 --save-dev</div></pre></td></tr></table></figure>
 <p>see? 一次把 <code>eslint-config-standard</code> 及相依套件安裝完畢，當然包含了 <code>eslint</code> 本身。</p>
 <p>如果你今天是開發 <code>React</code>, 那你一定要使用 Airbnb 出的 <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">JavaScript Style Guide</a>，他們制定的規則全世界的 JavaScript 開發者都在用。因為它們太哈 React 了，基於愛屋及烏的心態，我也跟風（茶）。</p>
 <p>這一套 <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank" rel="external">eslint-config-airbnb</a> 規則就是 <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">JavaScript Style Guide</a> 基於 eslint 的實作，看他專案的星星數已經跟 Angular 1 差不多了，就可以知道他受歡迎的程度。</p>
 <p>安裝它一樣很簡單，雖然它相依套件很多，但是我們有了它，使用 <code>install-peerdeps</code>:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ install-peerdeps eslint-config-airbnb --dev</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">install-peerdeps eslint-config-airbnb --dev</div></pre></td></tr></table></figure>
 <p>一樣，他自動幫我們安裝了 <code>eslint</code>, <code>eslint-plugin-import</code>, <code>eslint-plugin-react</code>, 以及<code>eslint-plugin-jsx-a11y</code>。</p>
 <p>最後記得，在 <code>.eslintrc.json</code> 做延伸：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"airbnb"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -505,13 +488,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
   </div>
 
 
@@ -546,7 +522,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
+               src="/images/avatar.jpg"
                alt="Jay Chung" />
           <p class="site-author-name" itemprop="name">Jay Chung</p>
            
@@ -615,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#淺談-linter-與-eslint"><span class="nav-number">1.</span> <span class="nav-text">淺談 linter 與 eslint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-eslint"><span class="nav-number">2.</span> <span class="nav-text">安裝 eslint</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#編輯器外掛"><span class="nav-number">2.1.</span> <span class="nav-text">編輯器外掛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝-eslint-1"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#規則與設定檔"><span class="nav-number">2.3.</span> <span class="nav-text">規則與設定檔</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-install-pperdeps-快速安裝-peer-dependencies"><span class="nav-number">3.</span> <span class="nav-text">使用 install-pperdeps 快速安裝 peer dependencies</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#淺談-linter-與-eslint"><span class="nav-number">1.</span> <span class="nav-text">淺談 linter 與 eslint</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-eslint"><span class="nav-number">2.</span> <span class="nav-text">安裝 eslint</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#編輯器外掛"><span class="nav-number">2.1.</span> <span class="nav-text">編輯器外掛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-eslint-函式庫"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 eslint 函式庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#規則與設定檔"><span class="nav-number">2.3.</span> <span class="nav-text">規則與設定檔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-install-pperdeps-快速安裝-peer-dependencies"><span class="nav-number">3.</span> <span class="nav-text">使用 install-pperdeps 快速安裝 peer dependencies</span></a></li></ol></div>
             
 
           </div>
@@ -755,26 +731,6 @@
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
-          this.page.identifier = '2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
-          this.page.title = '搞懂 eslint 並快速打造舒適的 JavaScript 開發環境';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
 
   
 
