@@ -79,7 +79,7 @@ menu_icons:
 
 # Schemes
 # scheme: Muse
-#scheme: Mist
+# scheme: Mist
 scheme: Pisces
 
 
@@ -306,7 +306,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname:
   count: true
 
@@ -347,10 +347,9 @@ changyan:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
-
+google_site_verification: vYAOXZBO1YJXLkrluN-mFO2--YbSGAhy36_iJDxNv_A
 # Google Analytics
-#google_analytics:
+google_analytics: UA-98495890-1
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
