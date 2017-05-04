@@ -4,16 +4,16 @@
 
 # Site
 title: Suite John 練功街
-subtitle: In my suite, make your JavaScript.
+subtitle: In my street, make your suite.
 description: 小街的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。
 signature: 小街的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。 # 檔 next 主題打開 seo 時變成讀取它
-author: Jay Chung
+author: 鍾曜年 (Jay Chung)
 language: zh-tw
 timezone:
-
+disqus_shortname: xjkit
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://xjkit.github.io
+url: https://xjkit.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
