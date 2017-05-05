@@ -32,11 +32,11 @@ copyright: false
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -345,10 +345,11 @@ changyan:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification: vYAOXZBO1YJXLkrluN-mFO2--YbSGAhy36_iJDxNv_A
+# <meta name="google-site-verification" content="6etm5eNSwOWHStJ_UQgRN9kz6HNxQQNLEnSG8Io7tro" />
+google_site_verification: 6etm5eNSwOWHStJ_UQgRN9kz6HNxQQNLEnSG8Io7tro
 
 # Google Analytics
-google_analytics: UA-98495890-1
+google_analytics: UA-98610238-1
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/

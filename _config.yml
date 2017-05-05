@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Suite John 練功街
+title: Suite Jay 練功街
 subtitle: In my street, make your suite.
 description: 小街的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。
 signature: 小街的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。 # 檔 next 主題打開 seo 時變成讀取它
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://xjkit.github.io
+url: https://suitejay.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
