@@ -9,14 +9,7 @@
 <head>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
-  <script>
-    var host = 'suitejay.io';
-    if ((window.location.host === host || window.location.host === 'www' + host ) && (window.location.protocol != "https:")) {
-      window.location.protocol = "https";
-    }
-  </script>
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
   {% include '_third-party/analytics/index.swig' %}
