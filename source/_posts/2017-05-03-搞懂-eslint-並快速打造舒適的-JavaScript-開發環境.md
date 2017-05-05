@@ -1,7 +1,7 @@
 ---
-title: 搞懂 eslint 並快速打造舒適的 JavaScript 開發環境
+title: 搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境
 categories:
-  - 分享
+  - enhancement
 tags:
   - javascript
   - debug
@@ -12,6 +12,8 @@ date: 2017-05-03 10:41:52
 
 JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。
 JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ [ESLint](http://eslint.org/)，不但是開發 [React](https://facebook.github.io/react/) 時期必備良藥，也是避免你寫爛扣的解藥之一。
+
+<!-- more -->
 
 # 淺談 linter 與 eslint
 
@@ -133,7 +135,7 @@ npm install --save-dev install-peerdeps # install locally
 
 在全域安裝`install-peerdeps`後就可以直接使用：
 
-```sh
+```bash
 $ install-peerdeps eslint-config-standard --dev
 # 執行結果 #
 install-peerdeps v1.1.3
