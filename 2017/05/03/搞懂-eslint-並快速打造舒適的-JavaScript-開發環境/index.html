@@ -95,14 +95,14 @@
 <meta name="description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta name="keywords" content="javascript,debug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
+<meta property="og:title" content="搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境">
 <meta property="og:url" content="https://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/index.html">
 <meta property="og:site_name" content="Suite John 練功街">
 <meta property="og:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta property="og:image" content="https://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/banner.jpg">
-<meta property="og:updated_time" content="2017-05-04T08:46:54.000Z">
+<meta property="og:updated_time" content="2017-05-05T02:08:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搞懂 eslint 並快速打造舒適的 JavaScript 開發環境">
+<meta name="twitter:title" content="搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境">
 <meta name="twitter:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta name="twitter:image" content="https://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/banner.jpg">
 
@@ -138,7 +138,7 @@
 
 
 
-  <title>搞懂 eslint 並快速打造舒適的 JavaScript 開發環境 | Suite John 練功街</title>
+  <title>搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境 | Suite John 練功街</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搞懂 eslint 並快速打造舒適的 JavaScript 開發環境</h1>
+          <h1 class="post-title" itemprop="name headline">搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境</h1>
         
 
         <div class="post-meta">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">更新於</span>
               
-              <time title="更新於" itemprop="dateModified" datetime="2017-05-04T16:46:54+08:00">
-                2017-05-04
+              <time title="更新於" itemprop="dateModified" datetime="2017-05-05T10:08:27+08:00">
+                2017-05-05
               </time>
             
           </span>
@@ -320,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/分享/" itemprop="url" rel="index">
-                    <span itemprop="name">分享</span>
+                  <a href="/categories/enhancement/" itemprop="url" rel="index">
+                    <span itemprop="name">enhancement</span>
                   </a>
                 </span>
 
@@ -367,6 +367,7 @@
       
         <img src="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/banner.jpg" alt="使用 ESLint 提升程式碼品質和寫作風格" title="使用 ESLint 提升程式碼品質和寫作風格">
 <p>JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。<br>JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，還能糾正你寫程式碼的壞習慣，這樣不是挺好的嘛？ <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a>，不但是開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 時期必備良藥，也是避免你寫爛扣的解藥之一。</p>
+<a id="more"></a>
 <h1 id="淺談-linter-與-eslint"><a href="#淺談-linter-與-eslint" class="headerlink" title="淺談 linter 與 eslint"></a>淺談 linter 與 eslint</h1><p><code>linter</code> 是用於編輯器的外掛，藉由套用各種規則，讓你在開發期間檢查你程式碼的錯誤，對於不同的程式碼有不同的 linter。隨著時間的推演，程式碼檢查的輔助工具有以下幾種，我列出比較知名的品牌：</p>
 <ul>
 <li><p><a href="https://github.com/douglascrockford/JSLint" target="_blank" rel="external">JSLint</a><br>檢查工具的老牌子了，但是由於沒有設定檔，自由度比較受限制，後來就姑且不愛。</p>
@@ -440,7 +441,7 @@
 <li>安裝 eslint-config-* 及其相依套件</li>
 </ol>
 <p>在全域安裝<code>install-peerdeps</code>後就可以直接使用：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ install-peerdeps eslint-config-standard --dev</div><div class="line"><span class="comment"># 執行結果 #</span></div><div class="line">install-peerdeps v1.1.3</div><div class="line">Installing peerdeps <span class="keyword">for</span> eslint-config-standard@10.2.1.</div><div class="line">npm install eslint-config-standard eslint@&gt;=3.19.0 eslint-plugin-import@&gt;=2.2.0 eslint-plugin-node@&gt;=4.2.2 eslint-plugin-promise@&gt;=3.5.0 eslint-plugin-standard@&gt;=3.0.0 --save-dev</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ install-peerdeps eslint-config-standard --dev</div><div class="line"><span class="comment"># 執行結果 #</span></div><div class="line">install-peerdeps v1.1.3</div><div class="line">Installing peerdeps <span class="keyword">for</span> eslint-config-standard@10.2.1.</div><div class="line">npm install eslint-config-standard eslint@&gt;=3.19.0 eslint-plugin-import@&gt;=2.2.0 eslint-plugin-node@&gt;=4.2.2 eslint-plugin-promise@&gt;=3.5.0 eslint-plugin-standard@&gt;=3.0.0 --save-dev</div></pre></td></tr></table></figure>
 <p>see? 一次把 <code>eslint-config-standard</code> 及相依套件安裝完畢，當然包含了 <code>eslint</code> 本身。</p>
 <p>如果你今天是開發 <code>React</code>, 那你一定要使用 Airbnb 出的 <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">JavaScript Style Guide</a>，他們制定的規則全世界的 JavaScript 開發者都在用。因為它們太哈 React 了，基於愛屋及烏的心態，我也跟風（茶）。</p>
 <p>這一套 <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank" rel="external">eslint-config-airbnb</a> 規則就是 <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">JavaScript Style Guide</a> 基於 eslint 的實作，看他專案的星星數已經跟 Angular 1 差不多了，就可以知道他受歡迎的程度。</p>
@@ -598,6 +599,17 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xJkit" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
           
         </div>
 
@@ -764,7 +776,7 @@
           this.language = 'zh_TW';
           this.page.url = 'https://xjkit.github.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
           this.page.identifier = '2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/';
-          this.page.title = '搞懂 eslint 並快速打造舒適的 JavaScript 開發環境';
+          this.page.title = '搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xjkit.disqus.com/embed.js';
