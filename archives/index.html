@@ -135,7 +135,12 @@
 
 
   <title>歸檔 | Suite John 練功街</title>
-  <script>console.log('in the script tag!')</script>
+  <script>
+    var host = 'suitejay.io';
+    if ((window.location.host === host || window.location.host === 'www' + host ) && (window.location.protocol != "https:")) {
+      window.location.protocol = "https";
+    }
+  </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
