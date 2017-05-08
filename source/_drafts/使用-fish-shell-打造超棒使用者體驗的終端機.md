@@ -5,11 +5,15 @@ tags:
 - git
 ---
 
-# fish 在 Mac OS 下的安裝
+{% asset_img fish-command.jpg "使用 fish shell 打造超棒使用者體驗的終端機" %}
+
 
 # 使用 fish 指令範例：快速刪除多個 git branch
 
+<!-- more -->
+
 在本地端有以下 git 分支：
+
 ```sh
 $ git branch
 
@@ -52,6 +56,7 @@ $ git branch
 ```
 
 使用 `grep` 取出 `feat` 開頭分支，並使用 `-v` 選項排除 `i18n`：
+
 ```sh
 $ git branch | grep 'feat' | grep -v 'i18n'
 
@@ -82,17 +87,20 @@ $ git branch | grep 'feat' | grep -v 'i18n'
 ```
 
 設定變數，並刪除前後空白：
+
 ```sh
 set x (string trim -- (git branch | grep 'feat' | grep -v 'i18n'))
 ```
 
 使用 `for` 迴圈進行迭代，並刪除指定分支：
+
 ```sh
   for i in $x:
     git branch -D $i
   end
 ```
 結果如下：
+
 ```sh
 Deleted branch feat/SongInfoEditModal (was 14940a6).
 Deleted branch feat/add-favorite (was f11eeef).
@@ -126,6 +134,7 @@ Deleted branch xJkit-feat/import-preview-pager (was d5f591b).
 ```
 
 我現在本地的 git branch 乾淨多啦：
+
 ```sh
 $ git branch
 
@@ -138,4 +147,49 @@ $ git branch
   update/external-links
   update/icon-fonts-20170314
   update/readme
+```
+
+現在只要保留 `master` 與 `feat/import-edit-on-the-fly`，其他都要刪除。
+
+使用 `grep -E` 抓取多組字串：
+
+```sh
+$ git branch | grep -E 'fix|update|refactor'
+
+  fix/YouTubePlatlist-UI-fix
+  fix/YoutubePlaylist-fix
+  refactor/header-dropdown
+  update/count-api-change
+  update/external-links
+  update/icon-fonts-20170314
+  update/readme
+```
+
+一樣，先過濾前後空白，然後透過 `for` 迴圈迭代刪除這些分支：
+
+```sh
+for i in (string trim -- (git branch | grep -E 'fix|update|refactor'))
+  git branch -D $i
+end
+```
+
+結果如下：
+
+```sh
+Deleted branch fix/YouTubePlatlist-UI-fix (was 19fcd90).
+Deleted branch fix/YoutubePlaylist-fix (was 5d695b5).
+Deleted branch refactor/header-dropdown (was 173cfe9).
+Deleted branch update/count-api-change (was 9d1cb2f).
+Deleted branch update/external-links (was 76cf82c).
+Deleted branch update/icon-fonts-20170314 (was 410a16b).
+Deleted branch update/readme (was 947609e).
+```
+
+我的 git branch 已經乾淨到不行了：
+
+```sh
+$ git branch
+
+  feat/import-edit-on-the-fly
+* master
 ```
