@@ -1,5 +1,5 @@
 ---
-title: 使用 fish 打造超棒用戶體驗終端機（二）：場景篇
+title: 使用 fish 打造超棒用戶體驗終端機：場景篇
 tags:
 - shell
 - git
