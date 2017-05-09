@@ -1,11 +1,10 @@
 ---
 title: 搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境
 categories:
-  - enhancement
+  - devTool
 tags:
   - javascript
   - debug
-  - devTool
 date: 2017-05-03 10:41:52
 ---
 
