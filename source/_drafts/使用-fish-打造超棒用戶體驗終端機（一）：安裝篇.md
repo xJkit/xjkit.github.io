@@ -3,13 +3,13 @@ title: 使用 fish 打造超棒用戶體驗終端機（一）：安裝篇
 tags:
 ---
 
-{% asset_img banner-fish.svg "使用 fish shell 打造超棒用戶體驗終端機" %}
+![使用 fish shell 打造超棒用戶體驗終端機](banner-fish.svg)
 
 ~~好的終端機帶你上天堂~~，為了加速你的工作效率，你一定要試試 [fish](https://fishshell.com/) shell。全名為 **F**riendly **I**nteractive **Sh**ell，跟當紅的 **bash** 與 **zsh** 相比算是小眾，但由於它一裝完「原廠」即有超優使用者體驗，造福那些不需要高度訂製 .bashrc 或 .zshrc 設定檔的懶人來說非常方便，因為無需設定就非常好用，你一定會愛死它。
 
 <!-- more -->
 
-{% asset_img fish-autocomplete-demo.gif "fish shell 超方便自動補齊" %}
+![fish shell 超方便自動補齊](fish-autocomplete-demo.gif)
 
 fish 擁有超強自動補齊的功能，透過歷史紀錄來瞭解你的語法，在重複敲進相同指令時會提出建議，建議的字體以灰色顯示。不僅如此，在使用指令時會變色，預知你指令是否正確。說了這麼多，先來搞安裝，不會太久。
 
@@ -64,8 +64,6 @@ $ fish_config
 
 Web config started at 'file:///Users/JoeyChung/.cache/fish/web_config-8TAAZN.html'. Hit enter to stop.
 ```
-
-{% asset_img banner-fish.svg "使用 fish shell 打造超棒用戶體驗終端機" %}
 
 
 你會發現瀏覽器自動開啟 `http://localhost:8000`，便可進入到網頁版 fish 設定頁面，非常方便。
