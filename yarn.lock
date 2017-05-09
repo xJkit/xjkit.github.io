@@ -845,6 +845,10 @@ hexo-i18n@^0.2.1:
   dependencies:
     sprintf-js "^1.0.2"
 
+hexo-image-caption@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/hexo-image-caption/-/hexo-image-caption-0.1.1.tgz#0091b582da05acedf946a3e67e8aa205b1f4dfa2"
+
 hexo-log@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/hexo-log/-/hexo-log-0.1.2.tgz#b3d36522226ece80b5da28a7db989ccdb394e5e0"

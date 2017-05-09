@@ -65,8 +65,9 @@ $ fish_config
 Web config started at 'file:///Users/JoeyChung/.cache/fish/web_config-8TAAZN.html'. Hit enter to stop.
 ```
 
+你會發現瀏覽器自動開啟 `http://localhost:8000`，美美的網頁版設定頁出現在眼前。
 
-你會發現瀏覽器自動開啟 `http://localhost:8000`，便可進入到網頁版 fish 設定頁面，非常方便。
+![fish 網頁版安裝頁面](fish-config-page.jpg)
 
 ## 安裝 fish 套件管理系統：[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 

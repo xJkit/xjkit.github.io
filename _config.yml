@@ -79,3 +79,9 @@ deploy:
   repo: git@github.com:xJkit/xJkit.github.io.git
   branch: master
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+#### custom configurations for plugins
+# hexo-image-caption
+image_caption:
+  enable: true #false to disable
+  class_name: #if you wanna customize the style for the caption,you can assign a class name, default is 'image-caption'
