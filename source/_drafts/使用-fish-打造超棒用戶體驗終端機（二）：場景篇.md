@@ -1,5 +1,5 @@
 ---
-title: 使用 fish shell 打造超棒使用者體驗的終端機
+title: 使用 fish 打造超棒用戶體驗終端機（二）：場景篇
 tags:
 - shell
 - git
@@ -7,8 +7,20 @@ tags:
 
 {% asset_img fish-command.jpg "使用 fish shell 打造超棒使用者體驗的終端機" %}
 
+# 在 fish 裡使用 Git
 
-# 使用 fish 指令範例：快速刪除多個 git branch
+fish 的自動補齊功能是提高 shell 使用者體驗的必備良藥，想當然爾使用 **cd** 是非常的好用不在話下：
+
+{% asset_img fish-cd.png "使用 fish shell 打造超棒使用者體驗的終端機：cd" %}
+
+當你鍵入 **cd** 後直接敲 **Tab** ， fish 就會直接列出當前目錄給你選。對，是給你 **選**，只要繼續 **Tab** 或是按鍵盤左右鍵都行。
+
+想不到 fish 在 git branch 切換分支時也有同樣的效果：
+
+{% asset_img fish-git-checkout.png "使用 fish shell 打造超棒使用者體驗的終端機：git checkout" %}
+
+
+# 使用 fish 指令：快速刪除多個 git branch
 
 <!-- more -->
 
