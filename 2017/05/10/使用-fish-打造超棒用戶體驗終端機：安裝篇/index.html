@@ -1,0 +1,808 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="6etm5eNSwOWHStJ_UQgRN9kz6HNxQQNLEnSG8Io7tro" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="好的終端機帶你上天堂 為了加速你的工作效率，你一定要試試 fish shell。全名為 Friendly Interactive Shell，跟當紅的 bash 與 zsh 相比算是小眾，但由於它一裝完「原廠」即有超優使用者體驗，造福那些不需要高度訂製 .bashrc 或 .zshrc 設定檔的懶人來說非常方便，因為無需設定就非常好用，你一定會愛死它。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 fish 打造超棒用戶體驗終端機：安裝篇">
+<meta property="og:url" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/index.html">
+<meta property="og:site_name" content="Suite Jay 練功街">
+<meta property="og:description" content="好的終端機帶你上天堂 為了加速你的工作效率，你一定要試試 fish shell。全名為 Friendly Interactive Shell，跟當紅的 bash 與 zsh 相比算是小眾，但由於它一裝完「原廠」即有超優使用者體驗，造福那些不需要高度訂製 .bashrc 或 .zshrc 設定檔的懶人來說非常方便，因為無需設定就非常好用，你一定會愛死它。">
+<meta property="og:image" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/banner-fish.svg">
+<meta property="og:image" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/fish-autocomplete-demo.gif">
+<meta property="og:image" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/fish-config-page.jpg">
+<meta property="og:image" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/omf-commands.jpg">
+<meta property="og:updated_time" content="2017-05-09T18:37:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 fish 打造超棒用戶體驗終端機：安裝篇">
+<meta name="twitter:description" content="好的終端機帶你上天堂 為了加速你的工作效率，你一定要試試 fish shell。全名為 Friendly Interactive Shell，跟當紅的 bash 與 zsh 相比算是小眾，但由於它一裝完「原廠」即有超優使用者體驗，造福那些不需要高度訂製 .bashrc 或 .zshrc 設定檔的懶人來說非常方便，因為無需設定就非常好用，你一定會愛死它。">
+<meta name="twitter:image" content="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/banner-fish.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/"/>
+
+
+
+
+
+  <title>使用 fish 打造超棒用戶體驗終端機：安裝篇 | Suite Jay 練功街</title>
+  <script type="text/javascript">
+    var host = "suitejay.io";
+    if ((window.location.host === host) && (window.location.protocol != "https:")) {
+      window.location.protocol = "https";
+    }
+  </script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98610238-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suite Jay 練功街</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">In my street, make your suite.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jay Chung">
+      <meta itemprop="description" content="小 J 的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suite Jay 練功街">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">使用 fish 打造超棒用戶體驗終端機：安裝篇</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-05-10T02:37:41+08:00">
+                2017-05-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新於</span>
+              
+              <time title="更新於" itemprop="dateModified" datetime="2017-05-10T02:37:41+08:00">
+                2017-05-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/banner-fish.svg" alt="使用 fish shell 打造超棒用戶體驗終端機"><span class="image-caption">使用 fish shell 打造超棒用戶體驗終端機</span></p>
+<p><del>好的終端機帶你上天堂</del> 為了加速你的工作效率，你一定要試試 <a href="https://fishshell.com/" target="_blank" rel="external">fish</a> shell。全名為 <strong>F</strong>riendly <strong>I</strong>nteractive <strong>Sh</strong>ell，跟當紅的 <strong>bash</strong> 與 <strong>zsh</strong> 相比算是小眾，但由於它一裝完「原廠」即有超優使用者體驗，造福那些不需要高度訂製 .bashrc 或 .zshrc 設定檔的懶人來說非常方便，因為無需設定就非常好用，你一定會愛死它。</p>
+<a id="more"></a>
+<p><img src="/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/fish-autocomplete-demo.gif" alt="fish shell 超方便自動補齊"><span class="image-caption">fish shell 超方便自動補齊</span></p>
+<p>fish 擁有超強自動補齊的功能，透過歷史紀錄來瞭解你的語法，在重複敲進相同指令時會提出建議，建議的字體以灰色顯示。不僅如此，在使用指令時會變色，預知你指令是否正確。說了這麼多，先來搞安裝，不會太久。</p>
+<h1 id="安裝-fish-shell"><a href="#安裝-fish-shell" class="headerlink" title="安裝 fish shell"></a>安裝 fish shell</h1><p>我個人使用 Mac OS 蘋果作業系統，而且 fish 在 Mac 上面運作的非常好，再次以此平台展示安裝，其他平台可參見 <a href="https://fishshell.com/" target="_blank" rel="external">fish 官方網站</a>。Mac 上直接使用 <a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a> 安裝整個快到不行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install fish</div></pre></td></tr></table></figure>
+<p>安裝完畢。鍵入 <code>fish</code> 就可以看見你的 bash 變成了 fish！</p>
+<p>由於 Mac 作業系統預設使用 bash，若每次打開新的終端機都要 key 一次 <code>fish</code> 豈不是挺累人的。如果你使用 fish 後發現體驗很棒，想要終端機預設 fish，請繼續看下去。</p>
+<h2 id="使用-fish-作為你的預設-shell"><a href="#使用-fish-作為你的預設-shell" class="headerlink" title="使用 fish 作為你的預設 shell"></a>使用 fish 作為你的預設 shell</h2><p>Mac 所有的 shell 都條列在 <code>/etc/shells</code> 檔裡面。你會發現裡面除了 <strong>bash</strong> 和 <strong>zsh</strong> 之外，另有 ksh, csh, tcsh 等。以上都不是重點，你只要把你剛剛透過 <strong>brew</strong> 安裝的 fish 路徑放在最後一行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/bin/bash</div><div class="line">/bin/csh</div><div class="line">/bin/ksh</div><div class="line">/bin/sh</div><div class="line">/bin/tcsh</div><div class="line">/bin/zsh</div><div class="line">/usr/<span class="built_in">local</span>/bin/fish <span class="comment"># 新增你的 fish 在這裡</span></div></pre></td></tr></table></figure>
+<p>接著，使用 <code>chsh</code> 改變你的預設 shell:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh <span class="_">-s</span> /usr/<span class="built_in">local</span>/bin/fish</div></pre></td></tr></table></figure>
+<p>設定完畢。打開一個新的終端機，你會第一眼看見 fish。</p>
+<h2 id="定製你的-fish-shell"><a href="#定製你的-fish-shell" class="headerlink" title="定製你的 fish shell"></a>定製你的 fish shell</h2><p>fish 預設的設定檔案位於 <code>~/.config/fish/config.fish</code>，在 fish 啟動時都會讀取一遍。你可以在上面自定歡迎畫面，例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"Welcome to j fish"</span></div></pre></td></tr></table></figure>
+<p>這段話就會在沒當你開啟 fish 時自動顯示。另外，你也可以自己定義 function ，每當開啟 fish 就可以使用。</p>
+<p>嫌設定檔麻煩嗎？ fish 提供了一個網頁版 UI 頁面讓你開心做設定，只要在 fish shell 下輸入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ fish_config</div><div class="line"></div><div class="line">Web config started at <span class="string">'file:///Users/JayChung/.cache/fish/web_config-8TAAZN.html'</span>. Hit enter to stop.</div></pre></td></tr></table></figure>
+<p>你會發現瀏覽器自動開啟 <code>http://localhost:8000</code>，美美的網頁版設定頁出現在眼前。</p>
+<p><img src="/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/fish-config-page.jpg" alt="fish 網頁版安裝頁面"><span class="image-caption">fish 網頁版安裝頁面</span></p>
+<h1 id="安裝-fish-套件管理系統：oh-my-fish"><a href="#安裝-fish-套件管理系統：oh-my-fish" class="headerlink" title="安裝 fish 套件管理系統：oh-my-fish"></a>安裝 fish 套件管理系統：<a href="https://github.com/oh-my-fish/oh-my-fish" target="_blank" rel="external">oh-my-fish</a></h1><p><a href="https://github.com/oh-my-fish/oh-my-fish" target="_blank" rel="external">oh-my-fish</a> 或 <strong>omf</strong> 是為了進一步強化 fish shell 功能的套件管理器，就像使用 <strong>zsh</strong> 會安裝 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">oh-my-fish</a>。讓你覺得還不滿足現在好用的 fish。</p>
+<p>安裝 <a href="https://github.com/oh-my-fish/oh-my-fish" target="_blank" rel="external">oh-my-fish</a> 需要透過 <code>curl</code> 從官網拉下來，接著透過 <code>fish</code> 運行安裝腳本，並安置在 <code>~/.config/omf</code> 目錄底下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L https://get.oh-my.fish | fish</div></pre></td></tr></table></figure>
+<p>想知道壺裡賣什麼藥，可以直接造訪 <a href="https://get.oh-my.fish" target="_blank" rel="external">https://get.oh-my.fish</a> 欣賞腳本內容。</p>
+<blockquote>
+<p>注意：安裝腳本所執行的內容依賴本機 <code>git@1.9.1+</code>，若版本過低請透過 <code>brew update git</code> 升級。若你的 git 並非透過 Homebrew 安裝，請先刪除原本的 git 資料夾後使用 <code>brew install git</code> 重新安裝最新版本。 git 的資料夾位於 <code>which git</code>。</p>
+</blockquote>
+<h2 id="開始使用-oh-my-fish-訂製你的-fish"><a href="#開始使用-oh-my-fish-訂製你的-fish" class="headerlink" title="開始使用 oh-my-fish 訂製你的 fish"></a>開始使用 <strong>oh-my-fish</strong> 訂製你的 fish</h2><p>關於 <code>omf</code> 的指令當然是先讓 <code>fish</code> 來告訴我們。鍵入 <code>omf</code> 後<code>空格</code>，再按下 <code>Tab</code>鍵：</p>
+<p><img src="/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/omf-commands.jpg" alt="使用 fish 自動補齊顯示指令提示"><span class="image-caption">使用 fish 自動補齊顯示指令提示</span></p>
+<p><code>omf</code> 的指令與變更最終都會記錄在 <code>~/.config/omf</code>，其結構如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── bundle</div><div class="line">├── channel</div><div class="line">├── init.fish</div><div class="line">└── theme</div></pre></td></tr></table></figure>
+<p>其中 <code>theme</code> 檔案裡記錄了 fish shell 所使用的主題名稱，我們就來簡單玩主題。</p>
+<h2 id="使用-omf-簡單玩主題"><a href="#使用-omf-簡單玩主題" class="headerlink" title="使用 omf 簡單玩主題"></a>使用 <strong>omf</strong> 簡單玩主題</h2><p><code>oh-my-fish</code> 的<a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#fishface" target="_blank" rel="external">主題列表</a>列出可以拿來訂製你的 fish 玩具。有些主題涉及字型安裝，安裝上比較棘手，我們先從簡單的主題 <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#cyan-1" target="_blank" rel="external">cyan</a> 開始，使用 <code>install</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ omf install cyan</div><div class="line"></div><div class="line">Installing theme cyan</div><div class="line">✔ theme cyan successfully installed.</div></pre></td></tr></table></figure>
+<p>安裝完後你會發現你的 fish 女大十八變，嘴角不爭氣的上揚了。</p>
+<p>使用 <code>theme</code> 可以查看你的主題列表：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ omf theme</div><div class="line"></div><div class="line">Installed:</div><div class="line">  cyan		default</div><div class="line"></div><div class="line">Available:</div><div class="line">agnoster		dangerous		gitstatus		mtahmed			simple-ass-prompt</div><div class="line">batman			default			gnuykeaj		nai			simplevi</div><div class="line">beloglazov		eclm			godfather		nelsonjchen		sushi</div><div class="line">bira			edan			hulk			numist			syl20bnr</div><div class="line">bobthefish		eden			idan			ocean			taktoa</div><div class="line">budspencer		es			integral		pastfish		technopagan</div><div class="line">cbjohnson		fishbone		jacaetevha		perryh			toaster</div><div class="line">chain			fishface		krisleech		plain			tomita</div><div class="line">clearance		fishy-drupal		l			pure			trout</div><div class="line">cmorrell		fisk			lambda			red-snapper		uggedal</div><div class="line">coffeeandcode		flash			lolfish			robbyrussell		will</div><div class="line">cor			fox			mars			scorphish		yimmy</div><div class="line">cyan			gianu			mokou			shellder		zish</div></pre></td></tr></table></figure>
+<p><code>omf</code> 不僅列出了已經安裝的主題，還貼心告訴你其他可用的玩具。你會發現，已經有一個主題預先安裝了，叫做 <code>defualt</code>。切換主題非常簡單，在最後的參數打上名字就行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">omf theme default</div></pre></td></tr></table></figure>
+<p>關於更進階的玩法，有空再發文章囉。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/" rel="next" title="搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境">
+                <i class="fa fa-chevron-left"></i> 搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Jay Chung" />
+          <p class="site-author-name" itemprop="name">Jay Chung</p>
+           
+              <p class="site-description motion-element" itemprop="description">小 J 的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。</p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分類</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">標籤</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xJkit" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-fish-shell"><span class="nav-number">1.</span> <span class="nav-text">安裝 fish shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-fish-作為你的預設-shell"><span class="nav-number">1.1.</span> <span class="nav-text">使用 fish 作為你的預設 shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定製你的-fish-shell"><span class="nav-number">1.2.</span> <span class="nav-text">定製你的 fish shell</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-fish-套件管理系統：oh-my-fish"><span class="nav-number">2.</span> <span class="nav-text">安裝 fish 套件管理系統：oh-my-fish</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#開始使用-oh-my-fish-訂製你的-fish"><span class="nav-number">2.1.</span> <span class="nav-text">開始使用 oh-my-fish 訂製你的 fish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-omf-簡單玩主題"><span class="nav-number">2.2.</span> <span class="nav-text">使用 omf 簡單玩主題</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jay Chung</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xjkit.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.language = 'zh_TW';
+          this.page.url = 'https://suitejay.io/2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/';
+          this.page.identifier = '2017/05/10/使用-fish-打造超棒用戶體驗終端機：安裝篇/';
+          this.page.title = '使用 fish 打造超棒用戶體驗終端機：安裝篇';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xjkit.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
