@@ -1,5 +1,7 @@
 ---
 title: 使用 fish 打造超棒用戶體驗終端機：場景篇
+categories:
+- devTool
 tags:
 - shell
 - git

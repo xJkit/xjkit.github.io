@@ -53,6 +53,7 @@ category_map:
 tag_map:
 - javascript
 - debug
+- git
 - shell
 
 # Date / Time format
