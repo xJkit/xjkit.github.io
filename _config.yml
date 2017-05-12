@@ -49,11 +49,11 @@ highlight:
 default_category: 隨筆
 category_map:
 - 隨筆
-- enhancement
-- react
+- devTool
 tag_map:
 - javascript
 - debug
+- shell
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
