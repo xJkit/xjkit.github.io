@@ -97,10 +97,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境">
 <meta property="og:url" content="https://suitejay.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/index.html">
-<meta property="og:site_name" content="Suite Jay 練功街">
+<meta property="og:site_name" content="Suite Jay 工程師的街角呢喃">
 <meta property="og:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
 <meta property="og:image" content="https://suitejay.io/2017/05/03/搞懂-eslint-並快速打造舒適的-JavaScript-開發環境/banner.jpg">
-<meta property="og:updated_time" content="2017-05-09T19:13:23.000Z">
+<meta property="og:updated_time" content="2017-05-17T18:15:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境">
 <meta name="twitter:description" content="JavaScript 是一個動態(弱)型別的程式語言，執行期間的變數型別與數值會依照當下所給的資料型態自動改變。這是優點也是缺點，優點是開發速度快、而且容易學習；缺點是當傳入不如預期的資料型態會造成程式碼的錯誤，這個在看函式庫的 API 時常會眼殘沒看清楚資料形態造成傳錯。別懷疑，專案長大時眼睛一定會有業障。JavaScript 在開發期間如果有一些小工具能幫你先抓出錯誤，不但能提升程式碼質量，">
@@ -138,7 +138,7 @@
 
 
 
-  <title>搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境 | Suite Jay 練功街</title>
+  <title>搞懂 ESLint 並快速打造舒適的 JavaScript 開發環境 | Suite Jay 工程師的街角呢喃</title>
   <script type="text/javascript">
     var host = "suitejay.io";
     if ((window.location.host === host) && (window.location.protocol != "https:")) {
@@ -188,7 +188,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Suite Jay 練功街</span>
+        <span class="site-title">Suite Jay 工程師的街角呢喃</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -270,7 +270,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Suite Jay 練功街">
+      <meta itemprop="name" content="Suite Jay 工程師的街角呢喃">
     </span>
 
     
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">更新於</span>
               
-              <time title="更新於" itemprop="dateModified" datetime="2017-05-10T03:13:23+08:00">
-                2017-05-10
+              <time title="更新於" itemprop="dateModified" datetime="2017-05-18T02:15:52+08:00">
+                2017-05-18
               </time>
             
           </span>
@@ -432,7 +432,7 @@
 <figure class="highlight json"><figcaption><span>.eslint.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: <span class="string">"standard"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>extends</code> 表示延伸原本的規則，你剛剛安裝的 <a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">eslint-config-standard</a> 就是在這裡做延伸；想看看其他全域變數可以參考這裡：<a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">Configuring ESLint</a>。</p>
 <p><code>eslint</code>環境在此設定完畢（汗），如果沒有快一點的安裝方式，你可能會殺了我。</p>
-<h1 id="使用-install-pperdeps-快速安裝-peer-dependencies"><a href="#使用-install-pperdeps-快速安裝-peer-dependencies" class="headerlink" title="使用 install-pperdeps 快速安裝 peer dependencies"></a>使用 <code>install-pperdeps</code> 快速安裝 peer dependencies</h1><p>由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 <code>npm</code> 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 <code>info</code>，並查看 <strong>peerDependencies</strong>：</p>
+<h1 id="使用-install-peerdeps-快速安裝-peer-dependencies"><a href="#使用-install-peerdeps-快速安裝-peer-dependencies" class="headerlink" title="使用 install-peerdeps 快速安裝 peer dependencies"></a>使用 <code>install-peerdeps</code> 快速安裝 peer dependencies</h1><p>由於上述第二點在安裝 eslint 規則的 peer dependencies 實在太繁瑣，而且有些規則還有指定相依套件的版本號，這種指令誰鬼才記得起來，還要常常造訪官方的 Github Repo 看有沒有更新版本。 好在 <code>npm</code> 其中有指令是可以查看該模組的詳細資訊，包含相依套件及其版本號，我們來試試，使用 <code>info</code>，並查看 <strong>peerDependencies</strong>：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ npm info eslint-config-standard peerDependencies</div><div class="line"><span class="comment"># npm 搭配 info, view, v, 或是 show 都是相同的</span></div><div class="line"></div><div class="line">&#123; eslint: <span class="string">'&gt;=3.19.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-import'</span>: <span class="string">'&gt;=2.2.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-node'</span>: <span class="string">'&gt;=4.2.2'</span>,</div><div class="line">  <span class="string">'eslint-plugin-promise'</span>: <span class="string">'&gt;=3.5.0'</span>,</div><div class="line">  <span class="string">'eslint-plugin-standard'</span>: <span class="string">'&gt;=3.0.0'</span> &#125;</div></pre></td></tr></table></figure>
 <p>原來這個 <code>eslint-config-standard</code> 所搭配的相依套件及其版本號都在這裡，那我要安裝一個規則這麼麻煩阿？不但要先安裝 <code>eslint</code>，還要裝 <code>eslint-config-standard</code> 及其相依套件，最好版本還要正確。這樣搞豈不崩潰。在這個時候一定有 shell 魔人說話，我把這段資訊抓出來一次安裝：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(</div><div class="line">  <span class="built_in">export</span> PKG=eslint-config-standard;</div><div class="line">  npm info <span class="string">"<span class="variable">$PKG</span>@latest"</span> peerDependencies --json | <span class="built_in">command</span> sed <span class="string">'s/[\&#123;\&#125;,]//g ; s/: /@/g'</span> | xargs npm install --save-dev <span class="string">"<span class="variable">$PKG</span>@latest"</span></div><div class="line">)</div></pre></td></tr></table></figure>
@@ -609,7 +609,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">標籤</span>
               
             </div>
@@ -655,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#淺談-linter-與-eslint"><span class="nav-number">1.</span> <span class="nav-text">淺談 linter 與 eslint</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-eslint"><span class="nav-number">2.</span> <span class="nav-text">安裝 eslint</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#編輯器外掛"><span class="nav-number">2.1.</span> <span class="nav-text">編輯器外掛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-eslint-函式庫"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 eslint 函式庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#規則與設定檔"><span class="nav-number">2.3.</span> <span class="nav-text">規則與設定檔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-install-pperdeps-快速安裝-peer-dependencies"><span class="nav-number">3.</span> <span class="nav-text">使用 install-pperdeps 快速安裝 peer dependencies</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#淺談-linter-與-eslint"><span class="nav-number">1.</span> <span class="nav-text">淺談 linter 與 eslint</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-eslint"><span class="nav-number">2.</span> <span class="nav-text">安裝 eslint</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#編輯器外掛"><span class="nav-number">2.1.</span> <span class="nav-text">編輯器外掛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-eslint-函式庫"><span class="nav-number">2.2.</span> <span class="nav-text">安裝 eslint 函式庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#規則與設定檔"><span class="nav-number">2.3.</span> <span class="nav-text">規則與設定檔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-install-peerdeps-快速安裝-peer-dependencies"><span class="nav-number">3.</span> <span class="nav-text">使用 install-peerdeps 快速安裝 peer dependencies</span></a></li></ol></div>
             
 
           </div>
