@@ -5,6 +5,14 @@ tags:
 - git
 ---
 
+<!--預先寫下大綱-->
+* fisherman
+* to-fish
+* fish vi-mode
+* fish command 與使用場景，以 Git 為例
+<!-- end -->
+
+
 ![使用 fish shell 打造超棒使用者體驗的終端機](fish-command.jpg)
 
 # 在 fish 裡使用 Git
