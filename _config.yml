@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Suite Jay 工程師的街角呢喃
+title: xJkit - 工程師的街角呢喃
 subtitle: In my street, make your suite.
-description: 小 J 的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。
-signature: 小 J 的技術隨筆，熱愛 JavaScript－詭譎卻強大的全端語言。 # 檔 next 主題打開 seo 時變成讀取它
+description: 小 J 的技術隨筆，熱愛 Web 技術，熱愛健身，熱愛音樂。
+signature: 小 J 的技術隨筆，熱愛 Web 技術，熱愛健身，熱愛音樂。 # 檔 next 主題打開 seo 時變成讀取它
 author: Jay Chung
 language: zh-tw
 timezone:
