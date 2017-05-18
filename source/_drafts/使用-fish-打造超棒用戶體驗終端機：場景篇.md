@@ -12,7 +12,7 @@ tags:
 * to-fish
 * fish vi-mode
 * fish command 與使用場景，以 Git 為例
-* 考慮拆兩篇，分別為 「指令篇」與 「外掛篇」
+* 考慮拆兩篇，分別為 「指令篇」與 「工具篇」
 <!-- end -->
 
 
